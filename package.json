@@ -1,0 +1,29 @@
+{
+  "name": "chepelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "rollup": "^3.2.5",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "rollup-plugin-delete": "^2.0.0"
+  }
+}

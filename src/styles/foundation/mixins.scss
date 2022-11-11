@@ -1,0 +1,38 @@
+@use "./breakpoints" as breakpoints;
+
+/**
+ * Media Queries for Sized
+ *
+ * @include mixins.respond-to('md') {}
+ * @include mixins.respond-to('lg') {}
+ */
+
+/* prettier-ignore */
+@mixin respond-to($condition) {
+  @if $condition == "in"  { @media only screen and (min-width: breakpoints.$breakpoint-in)  { @content; } }
+  @if $condition == "xs"  { @media only screen and (min-width: breakpoints.$breakpoint-xs)  { @content; } }
+  @if $condition == "sm"  { @media only screen and (min-width: breakpoints.$breakpoint-sm)  { @content; } }
+  @if $condition == "md"  { @media only screen and (min-width: breakpoints.$breakpoint-md)  { @content; } }
+  @if $condition == "lg"  { @media only screen and (min-width: breakpoints.$breakpoint-lg)  { @content; } }
+  @if $condition == "xl"  { @media only screen and (min-width: breakpoints.$breakpoint-xl)  { @content; } }
+  @if $condition == "2xl" { @media only screen and (min-width: breakpoints.$breakpoint-2xl) { @content; } }
+}
+
+/**
+ * Media Queries for Features
+ *
+ * @include mixins.feature-to('hover') {}
+ * @include mixins.feature-to('hover') {}
+ */
+
+/* prettier-ignore */
+@mixin feature-to($condition) {
+  // Does the primary input mechanism allow the user to hover over elements?
+  @if $condition == "hover"     { @media only screen and (hover: hover) { @content; } }
+  // landscape-oriented
+  @if $condition == "landscape" { @media only screen and (orientation: landscape) { @content; } }
+  // portrait-oriented
+  @if $condition == "portrait"  { @media only screen and (orientation: portrait) { @content; } }
+  // Print preview mode
+  @if $condition == "print"     { @media print { @content; } }
+}

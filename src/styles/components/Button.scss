@@ -1,0 +1,67 @@
+@use "./../index.scss" as styles;
+
+/* Base Styles */
+.Button {
+  @include styles.styles-reset;
+  @include styles.font("body");
+  text-align: center;
+
+  width: 100%;
+  min-height: 2.25rem;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+
+  text-align: center;
+  white-space: nowrap;
+
+  color: styles.$blue-50;
+  border: solid 1px styles.$blue-900;
+  border-radius: 0.25rem;
+  background: styles.$blue-600;
+  box-shadow: none;
+
+  transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s,
+    border-color ease-in-out 0.3s;
+
+  /* Responsive Styles */
+  @include styles.respond-to("sm") {
+    width: auto;
+  }
+
+  /* Hover only If device has hover capabilities */
+  @include styles.feature-to("hover") {
+    /* Hover Styles */
+    &:hover:not(:disabled) {
+      background: styles.$blue-900;
+    }
+    /* Pressed Styles */
+    &:hover:not(:disabled):active {
+      background: styles.$blue-700;
+    }
+  }
+
+  /* Focus */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Focus */
+  &:focus-visible {
+    outline: solid 2px styles.$emerald-600;
+    outline-offset: 2px;
+  }
+
+  /* Disabled */
+  &:disabled {
+    background-color: transparent;
+    color: styles.$gray-900;
+    border-color: styles.$gray-900;
+    pointer-events: none;
+  }
+}

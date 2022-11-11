@@ -1,0 +1,43 @@
+@use "../typography" as typography;
+
+/**
+ * Reset
+ * @include styles-reset;
+ */
+@mixin reset {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+/**
+ * Styles reset
+ * @include styles-reset;
+ */
+@mixin styles-reset {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  all: revert;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+/**
+ * Styles reset
+ * @include styles-reset;
+ */
+@mixin font-reset {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  @include typography.font-base;
+}
+
+/**
+ * Button reset
+ * @include button-reset;
+ */
+@mixin button-reset {
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
